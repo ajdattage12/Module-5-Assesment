@@ -28,14 +28,19 @@ def sales_reports(log_file):
         day = line[0:3]
         if day == "Mon":
             print(line)
-sales_reports(log_file)
+# sales_reports(log_file)
 
-log_file.close()
+# log_file.close()
 
 # In process.py, write another function that prints
 # out all the melon orders that delivered over 10 melons.
 
 def melon_delivery(log_file):
     for line in log_file:
-        line = line.rstrip()
-        
+        line = line.strip()
+        line = line.split(' ')
+        amount = int(line[2])
+        if amount > 10:
+            print(' '.join(line))
+
+melon_delivery(log_file)

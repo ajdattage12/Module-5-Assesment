@@ -261,8 +261,8 @@ module.exports = {
     },
     getCities: (req, res) => {
         sequelize.query(`SELECT 
-        CITIES.name as city,
-        COUNTRIES.name as country,
+        CITIES.name AS city,
+        COUNTRIES.name AS country,
         CITIES.city_id,
         CITIES.rating
         FROM CITIES 
