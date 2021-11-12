@@ -31,3 +31,11 @@ def sales_reports(log_file):
 sales_reports(log_file)
 
 log_file.close()
+
+# In process.py, write another function that prints
+# out all the melon orders that delivered over 10 melons.
+
+def melon_delivery(log_file):
+    for line in log_file:
+        line = line.rstrip()
+        
