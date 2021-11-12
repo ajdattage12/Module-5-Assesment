@@ -247,13 +247,15 @@ module.exports = {
     createCity: (req, res) => {
         const {name, rating, countryId} = req.body;
         sequelize.query(`INSERT INTO cities(name, rating, country_id)
-            VALUES('${name}', ${rating}, ${countryId})`)
+            VALUES('${name}', ${rating}, ${countryId});
+            INSERT INTO cities 
+            ('Lehi', 4, 187),
+            ('Berlin', 4, 65),
+            ('Byron Bay', 5, 9)`)
             .then((dbResult) => {
                 res.status(200).send(dbResult)
             })
-            .catch((error) => console.log(error));
-
-        
+            .catch((error) => console.log(error));        
     },
     getCities: (req, res) => {
         sequelize.query(`SELECT 
